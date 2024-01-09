@@ -113,9 +113,20 @@ footer .social-icons a {
   transform: scale(1.01);
 
 }
+
 .skillsCards:hover > .material-symbols-outlined{
   color: var(--detailsColor);
 
+}
+
+.projectsContainer {
+  width: 26% !important;
+}
+
+.collapseButton {
+    width: 230px;
+    height: 40px;
+    margin: 10px 0px -10px 0px;
 }
 
 .FinalText{
@@ -135,6 +146,7 @@ h2:not(.FinalText) {
 .AboutMe h5:nth-child(1){
   color: var(--textColor) !important;
 }
+
 .AboutMe, .resume{
   color: var(--textColor) !important;
 }
@@ -145,6 +157,7 @@ h2:not(.FinalText) {
   color: var(--bg-color) !important;
   
 }
+
 .button:hover {
   background-color: #38ffa9 !important;
   border: none !important;
