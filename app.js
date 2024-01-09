@@ -60,6 +60,7 @@ const makeRequest = () => {
 
     if(minimamHeight <= 490) {
         // handleDatasGithub()
+        alert('chegou')
         removeScrollEvent()
     }
 }
