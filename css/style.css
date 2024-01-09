@@ -161,6 +161,51 @@ h2:not(.FinalText) {
   color: var(--detailsColor);
 }
 
+[data-js="container"] {
+  position: absolute;
+  transform: translate(0px, -10px);
+  margin: 0 auto;
+  
+}
+
+.moveAlert {
+  animation: moveAlert 0.7s ease-in-out forwards;
+}
+
+.hideAlert {
+  animation: hideAlert 0.7s ease-in-out forwards;
+}
+
+
+@keyframes moveAlert {
+  from{
+    transform: translate(0px, -10px);
+    opacity: 0;
+  } 
+  to{
+    transform: translate(0px, 46px);
+    opacity: 1;
+  }
+}
+
+@keyframes hideAlert {
+  from{
+    transform: translate(0px, 46px);
+    opacity: 1;
+  }
+  to{
+    transform: translate(0px, -100px);
+    opacity: 0;
+  } 
+}
+
+.alert {
+  margin: 0 auto;
+}
+
+.hide{
+  display: none;
+}
 
 
 @media screen and (max-width: 990px) {
