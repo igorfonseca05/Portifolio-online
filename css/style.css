@@ -25,7 +25,7 @@ body {
 .nav-item .nav-link {
   color: var(--white-color);
   font-weight: 500;
-  font-family: 'Sometype Mono', monospace;
+  /* font-family: 'Sometype Mono', monospace; */
 }
 
 .nav-item .nav-link:hover {
@@ -162,7 +162,8 @@ footer .social-icons a {
 
 .skillsCards:hover{
   transition: 0.2s ease-in-out;
-  transform: scale(1.01);
+  transform: scale(1.02);
+  box-shadow: 0px 0px 3px var(--detailsColor);
 
 }
 
@@ -185,11 +186,16 @@ footer .social-icons a {
 
 .cardProject{
   background-color:var(--details) !important;
-  border: none !important;
+  /* border: none !important; */
 }
 
 .card{
   border: none !important;
+}
+
+.cardProject:hover{
+  transition: 0.2s ease-in-out;
+  box-shadow: 0px 0px 3px var(--detailsColor);
 }
 
 .cardProject .card-title{
@@ -216,7 +222,7 @@ footer .social-icons a {
 
 h2:not(.FinalText) {
   color: var(--detailsColor) ;
-  font-family: 'Sometype Mono', monospace;
+  /* font-family: 'Sometype Mono', monospace; */
 }
 
 .AboutMe h5:nth-child(2) {
