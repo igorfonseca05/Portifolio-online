@@ -1,0 +1,73 @@
+[
+    {
+        "name": "Weather-App",
+        "id": 663927730,
+        "description": "Weather-App em JavaScript: informações meteorológicas precisas com interface amigável.",
+        "language": "JavaScript",
+        "svn_url": "https://github.com/igorfonseca05/Weather-App",
+        "homepage": "https://igorfonseca05.github.io/Weather-App/"
+    },
+    
+    {
+        "name": "DropDown",
+        "id": 732474897,
+        "description": "DropDown com JavaScript, CSS e HTML",
+        "language": "CSS",
+        "svn_url": "https://github.com/igorfonseca05/DropDown",
+        "homepage": "https://igorfonseca05.github.io/DropDown/"
+    },
+    
+    {
+        "name": "Form",
+        "id": 656815782,
+        "description": "Validação de formulários em JavaScript usando orientação a objetos para eficiência e organização.",
+        "language": "CSS",
+        "svn_url": "https://github.com/igorfonseca05/Form",
+        "homepage": "https://igorfonseca05.github.io/Form/"
+    },
+    
+    {
+        "name": "Mercado-livre-clone",
+        "id": 738959798,
+        "description": "Projeto educativo replicando visual e funcionalidades do Mercado Livre para aprimorar habilidades de desenvolvimento web.",
+        "language": "HTML",
+        "svn_url": "https://github.com/igorfonseca05/Mercado-livre-clone",
+        "homepage": null
+    },
+    
+    {
+        "name": "Multer",
+        "id": 706815916,
+        "description": "Implementação eficiente de upload de arquivos utilizando o Multer, simplificando a manipulação e armazenamento de dados de formulários em um aplicativo Node.js.",
+        "language": "JavaScript",
+        "svn_url": "https://github.com/igorfonseca05/Multer",
+        "homepage": ""
+    },
+    
+    {
+        "name": "Pop-up",
+        "id": 733158147,
+        "description": "Pop Up JS: Solução JavaScript para pop-ups leves e personalizáveis, facilitando a criação de interações dinâmicas e elegantes em páginas web",
+        "language": "CSS",
+        "svn_url": "https://github.com/igorfonseca05/Pop-up",
+        "homepage": "https://igorfonseca05.github.io/Pop-up/"
+    },
+    
+    {
+        "name": "Relogio-digital",
+        "id": 741073749,
+        "description": "Um relógio simples e preciso desenvolvido em JavaScript, ideal para integração rápida em páginas web.",
+        "language": "JavaScript",
+        "svn_url": "https://github.com/igorfonseca05/Relogio-digital",
+        "homepage": "https://igorfonseca05.github.io/Relogio-digital/"
+    },
+    
+    {
+        "name": "To-do-Project",
+        "id": 644426134,
+        "description": "To-do-list em JavaScript para organizar tarefas de maneira intuitiva e eficiente.",
+        "language": "JavaScript",
+        "svn_url": "https://github.com/igorfonseca05/To-do-Project",
+        "homepage": "https://igorfonseca05.github.io/To-do-Project/"
+    }
+]

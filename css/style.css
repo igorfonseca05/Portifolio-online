@@ -4,17 +4,22 @@
 /* Color variables */
 :root {
   --white-color: #eeeeee;
-  --bg-color: #23262d;
-  --gray-color: #ccc;
-  --detailsColor: #3fe69d; 
+  --bg-color1: #2b2a2f;
+  --bg-color2: #27262b;
+  --details: #2b2a2f;
+  --gray-color: #e4e4e4;
+  --detailsColor: #ff8c28; 
+  --detailsColorHover: #ff7802; 
   --textColor: #e6e6e6;
+  /* --buttonColor: rebeccapurple; */
   
 }
 
 /* Changing background color */
 body {
-  background: var(--bg-color) !important;
+  background: var(--bg-color2) !important;
 }
+
 
 /* Changing link color */
 .nav-item .nav-link {
@@ -31,11 +36,13 @@ body {
 /* Hero section background image */
 .hero {
   height: 100vh;
-  background-image: url("../images/tex.jpg");
+  background-image: url("../images/oficial\ Bg.jpg");
   background-repeat: no-repeat;
+  background-position: bottom;
   background-size: cover;
   background-attachment: fixed;
 }
+
 
 #skills i {
   height: 100px;
@@ -46,6 +53,46 @@ body {
   height: 300px;
   object-fit: cover;
 }
+
+.collapseButton{
+  background-color: var(--detailsColor) !important;
+  border: none !important;
+}
+
+i{
+  color: var(--detailsColor) !important;
+
+}
+
+.social-icons{
+  padding-left: 0px !important;
+}
+.social-icons a{
+  background-color: var(--details) !important;
+}
+
+.loader {
+  position: relative;
+  top: 53px;
+  left: 98px;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: none;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 
 
 #about .img,
 #about img,
@@ -90,8 +137,8 @@ footer .social-icons a {
 #contact {
   background-size: cover;
   background-attachment: fixed;
-  background-position: center;
-  background-image: url("../images/contact-bg.jpeg");
+  background-position: bottom;
+  background-image: url("../images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg");
 }
 
 .arrow {
@@ -100,12 +147,17 @@ footer .social-icons a {
 
 .skillsCards{
   width: 362px !important;
-  background-color: #eeeeee !important;
+  background-color:var(--details) !important;
   
 }
 
 .material-symbols-outlined{
   font-size: 30px !important;
+  color: var(--textColor) !important;
+}
+
+.skillColor{
+  color: var(--textColor) !important;
 }
 
 .skillsCards:hover{
@@ -115,19 +167,48 @@ footer .social-icons a {
 }
 
 .skillsCards:hover > .material-symbols-outlined{
-  color: var(--detailsColor);
-
+  color: var(--detailsColor) !important;
 }
 
 .projectsContainer {
-  width: 26% !important;
+  width: 25% !important;
+  border: none !important;
+}
+
+
+.projectsContainer .material-symbols-outlined  {
+  color: var(--bg-color1) !important;
+}
+.projectsContainer:hover  .material-symbols-outlined  {
+  color: var(--detailsColorHover) !important;
+}
+
+.cardProject{
+  background-color:var(--details) !important;
+  border: none !important;
+}
+
+.card{
+  border: none !important;
+}
+
+.cardProject .card-title{
+ color:var(--textColor) !important;
+  border: none !important;
+}
+
+
+.icons a {
+  margin: 0px 4px;
 }
 
 .collapseButton {
-    width: 230px;
+    width: 220px;
     height: 40px;
-    margin: 10px 0px -10px 0px;
+    margin: 14px 0px 3px 0px;
+    background-color: var(--textColor) !important;
 }
+
 
 .FinalText{
   text-align: center !important;
@@ -159,9 +240,9 @@ h2:not(.FinalText) {
 }
 
 .button:hover {
-  background-color: #38ffa9 !important;
+  background-color: var(--detailsColorHover) !important;
   border: none !important;
-  box-shadow: 0px 0px 10px #38ffa9 ;
+  box-shadow: 0px 0px 10px var(--detailsColorHover) ;
   color: var(--bg-color) !important;
   
 }
@@ -175,10 +256,15 @@ h2:not(.FinalText) {
 }
 
 [data-js="container"] {
-  position: absolute;
-  transform: translate(0px, -10px);
+  display: flex;
+  position: fixed;
+  transform: translate(0px, 50px);
   margin: 0 auto;
-  
+  width: 340px !important;  
+}
+
+.removeAlertContainer{
+  display: none;
 }
 
 .moveAlert {

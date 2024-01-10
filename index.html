@@ -20,9 +20,7 @@
   <header class="bg-dark fixed-top">
     <nav class="container-xxl navbar navbar-expand-lg py-3 bg-dark navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold fs-3" href="#"><span> <span class="arrow">
-             < </span> i <span class="arrow">></span>
-            </span></a>
+        <a class="navbar-brand fw-bold fs-3" href="#home"><span> <span class="arrow">< </span> i <span class="arrow">></span></span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -46,11 +44,16 @@
             </li>
         </div>
       </div>
+      <div data-js="container" class="container containerError">
+        <div class="row errorRow">
+          <div data-js="errorContainer" class="col-12 alert">
+
+          </div>
     </nav>
   </header>
 
   <!-- Hero or Showcase Section -->
-  <section class="hero d-flex flex-column align-items-center justify-content-center">
+  <section id="home" class="hero d-flex flex-column align-items-center justify-content-center">
     <div class="text-center">
       <h1 class="h1 text-white fw-medium fst-italic">Igor Fonseca</h1>
       <h2 class="display-3 text-white fw-bold">Web developer <br /></h2>
@@ -68,23 +71,23 @@
       </div>
     </div>
     <div class="row d-flex justify-content-between mx-0">
-      <div class="skillsCards card mt-5 d-flex flex-column align-items-center text-center p-4" style="width: 25rem">
-        <span class="material-symbols-outlined">phone_iphone</span>
-        <h3 class="mt-4 h4">Front-end Development</h3>
-        <p class="text-center">"Domínio em HTML, CSS e JavaScript. Experiência em design responsivo e construção de
+      <div class="skillsCards moveCards card mt-5 d-flex flex-column align-items-center text-center p-4" style="width: 25rem">
+        <span class=" material-symbols-outlined">phone_iphone</span>
+        <h3 class="skillColor mt-4 h4">Front-end Development</h3>
+        <p class="skillColor text-center">"Domínio em HTML, CSS e JavaScript. Experiência em design responsivo e construção de
           interfaces intuitivas para proporcionar uma experiência excepcional aos usuários.</p>
       </div>
-      <div class="skillsCards card mt-5 d-flex flex-column align-items-center text-center p-4" style="width: 25rem">
+      <div class="skillsCards moveCards card mt-5 d-flex flex-column align-items-center text-center p-4" style="width: 25rem">
         <span class="material-symbols-outlined">code</span>
-        <h3 class="mt-4 h4">Back-end Development</h3>
-        <p class="text-center">Competente em programação server-side, aplicando tecnologias como Node.js e Express. Com
+        <h3 class="skillColor mt-4 h4">Back-end Development</h3>
+        <p class="skillColor text-center">Competente em programação server-side, aplicando tecnologias como Node.js e Express. Com
           dedicação de anos no estudo dessas ferramentas, focado especialmente na administração de bancos de dados, como
           MongoDB e MySQL.</p>
       </div>
-      <div class="skillsCards card mt-5 d-flex flex-column align-items-center text-center p-4" style="width: 25rem">
-        <span class="material-symbols-outlined">settings</span>
-        <h3 class="mt-4 h4">Manutenção de <br> Websites</h3>
-        <p class="text-center">A manutenção de websites é essencial para garantir seu desempenho contínuo, incluindo
+      <div class="skillsCards moveCards card mt-5 d-flex flex-column align-items-center text-center p-4" style="width: 25rem">
+        <span class=" material-symbols-outlined">settings</span>
+        <h3 class="skillColor mt-4 h4">Manutenção de <br> Websites</h3>
+        <p class="skillColor text-center">A manutenção de websites é essencial para garantir seu desempenho contínuo, incluindo
           correções de bugs, atualizações de conteúdo e verificações de segurança. Profissionais especializados
           desempenham um papel vital nesse processo, assegurando uma experiência online consistente e confiáve</p>
       </div>
@@ -94,134 +97,16 @@
   <!-- Portfolio Section -->
   <section class="container py-5" id="portfolio">
     <div class="row mt-4 py-3">
-      <div class="col-12 d-flex flex-column text-center justify-content-center">
-        <!-- Error container -->
-        <div data-js="container" class="container">
-          <div class="row">
-            <div data-js="errorContainer" class="col-6 alert">
-  
-            </div>
-          </div>
+      <div class="col-12 d-flex flex-column text-center justify-content-center"></div>
         </div>
         <!-- Inicio seção -->
-        <h2>PORTFOLIO</h2>
-        <h5 class="text-secondary fw-normal py-2 fst-italic">Uma coleção de projetos nos quais estive envolvido.</h5>
+        <h2 class="text-center">PORTFOLIO</h2>
+        <h5 class="text-center text-secondary fw-normal py-2 fst-italic">Uma coleção de projetos nos quais estive envolvido.</h5>
       </div>
-      <div data-js="portfolioContainer" class="row mt-5 mx-0 justify-content-center align-items-center">
+      <div data-js="portfolioContainer" class="row mt-3 mx-0 justify-content-center align-items-center">
         <div class="projectsContainer col-lg-3 col-md-4  card-wrapper">
-          <div class="card mt-4">
-            <!-- <img src="images/ecommerce.png" class="img-fluid" alt="portfolio-img"> -->
-            <div class="card-body text-center">
-              <h6 class="card-title">E-commerce Website</h6>
-              <p class="card-text text-secondary">HTML/CSS/JavaScript</p>
-              <div class="icons">
-                <a href="link-do-projeto" target="_blank" title="Link do Projeto">
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="link-do-github" target="_blank" title="Repositório no GitHub">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+          <span class="loader"></span>
         </div>
-        <div class="projectsContainer col-lg-3 col-md-4 card-wrapper">
-          <div class="card mt-4">
-            <!-- <img src="images/landing-page.jpg" class="img-fluid" alt="portfolio-img"> -->
-            <div class="card-body text-center">
-              <h6 class="card-title">Responsive Landing Page</h6>
-              <p class="card-text text-secondary">HTML/CSS/Bootstrap</p>
-              <div class="icons">
-                <!-- <a href="link-do-projeto" target="_blank" title="Link do Projeto">
-                  <i class="fas fa-external-link-alt"></i>
-                </a> -->
-                <a href="link-do-github" target="_blank" title="Repositório no GitHub">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-              <p>
-                <a href="#collapseExample" type="button" class="collapseButton btn btn-primary" data-bs-toggle="collapse">
-                 <span class="material-symbols-outlined">expand_more</span>
-                </a>
-              </p>
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body" >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, neque maiores suscipit reiciendis temporibus non? 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="projectsContainer col-lg-3 col-md-4 card-wrapper">
-          <div class="card mt-4">
-            <!-- <img src="images/calculator-app.jpg" class="img-fluid" alt="portfolio-img"> -->
-            <div class="card-body text-center">
-              <h6 class="card-title">Calculator App</h6>
-              <p class="card-text text-secondary">HTML/CSS/JavaScript</p>
-              <div class="icons">
-                <a href="link-do-projeto" target="_blank" title="Link do Projeto">
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="link-do-github" target="_blank" title="Repositório no GitHub">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="projectsContainer col-lg-3 col-md-4 card-wrapper">
-          <div class="card mt-4">
-            <!-- <img src="images/blog.jpg" class="img-fluid" alt="portfolio-img"> -->
-            <div class="card-body text-center">
-              <h6 class="card-title">Blog web-Site</h6>
-              <p class="card-text text-secondary">HTML/CSS</p>
-              <div class="icons">
-                <a href="link-do-projeto" target="_blank" title="Link do Projeto">
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="link-do-github" target="_blank" title="Repositório no GitHub">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="projectsContainer col-lg-3 col-md-4 card-wrapper">
-          <div class="card mt-4">
-            <!-- <img src="images/react.jpg" class="img-fluid" alt="portfolio-img"> -->
-            <div class="card-body text-center">
-              <h6 class="card-title">Task Management App</h6>
-              <p class="card-text text-secondary">ReactJS</p>
-              <div class="icons">
-                <a href="link-do-projeto" target="_blank" title="Link do Projeto">
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="link-do-github" target="_blank" title="Repositório no GitHub">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="projectsContainer col-lg-3 col-md-4 card-wrapper">
-          <div class="card mt-4">
-            <!-- <img src="images/python.jpg" class="img-fluid" alt="portfolio-img"> -->
-            <div class="card-body text-center">
-              <h6 class="card-title">Data Visualization</h6>
-              <p class="card-text text-secondary">Python/Plotly</p>
-              <div class="icons">
-                <a href="link-do-projeto" target="_blank" title="Link do Projeto">
-                  <i class="fas fa-external-link-alt"></i>
-                </a>
-                <a href="link-do-github" target="_blank" title="Repositório no GitHub">
-                  <i class="fab fa-github"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -425,7 +310,7 @@
           <dd>Freelancer</dd>
           <!-- Add or remove work experience entries as needed -->
         </dl>
-        <h3>Extracurricular Activities</h3>
+        <h3 class="curriculumTitle">Extracurricular Activities</h3>
         <hr>
         <dl>
           <dt>Trilha Digital-Web Front-End</dt>
@@ -442,7 +327,7 @@
   <section class="py-5" id="contact">
     <div class="container-xxl py-5">
       <div class="col-12 d-flex flex-column text-center justify-content-center">
-        <h2 class="text-white">CONTACT ME</h2>
+        <h2 class="curriculumTitle">CONTACT ME</h2>
         <h5 class="text-white fw-normal py-2 fst-italic">O próximo projeto incrível pode começar com uma mensagem sua.
           Estou pronto, vamos conversar?</h5>
       </div>
