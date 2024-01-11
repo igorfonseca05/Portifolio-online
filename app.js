@@ -2,10 +2,18 @@
 window.onload = function () {
     const form = document.getElementById('contact-form')
 
+    
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        emailjs.sendForm('contact_service', 'contact_form', this)
+        const templeteParams = {
+            from_name: event.target.user_name.value,
+            message: event.target.message.value,
+            email: event.target.user_email.value,
+            number: event.target.contact_number.value 
+        }
+
+        emailjs.sendForm('contact_service', 'contact_form', templeteParams)
             .then(function () {
                 console.log('SUCCESS!');
             }, function (error) {
