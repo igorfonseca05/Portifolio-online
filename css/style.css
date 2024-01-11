@@ -313,6 +313,12 @@ h2:not(.FinalText) {
 }
 
 
+.sendButton {
+  min-width: 178px !important;
+}
+
+
+
 @media screen and (max-width: 990px) {
   #skills .card {
     width: calc(100% / 2 - 10px) !important;

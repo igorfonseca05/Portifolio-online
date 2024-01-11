@@ -1,26 +1,5 @@
-// Inicializando o serviço de E-mail
-window.onload = function () {
-    const form = document.getElementById('contact-form')
 
-    
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
 
-        const templeteParams = {
-            from_name: event.target.user_name.value,
-            message: event.target.message.value,
-            email: event.target.user_email.value,
-            number: event.target.contact_number.value 
-        }
-
-        emailjs.sendForm('contact_service', 'contact_form', templeteParams)
-            .then(function () {
-                console.log('SUCCESS!');
-            }, function (error) {
-                console.log('FAILED...', error);
-            });
-    });
-}
 
 // Manipulação do Dom
 
@@ -67,15 +46,15 @@ const createCardsProject = (gitHubProject) => {
     infosLinks.forEach(info => {
         const elProjectLink = document.createElement('a')
         const icon = document.createElement('i')
-        
+
         if (info.link) {
             elProjectLink.setAttribute('href', `${info.link}`)
             icon.setAttribute('class', `${info.classIcon}`)
-        } 
+        }
 
         elProjectLink.setAttribute('target', '_blanck')
         elProjectLink.setAttribute('title', `${info.title}`)
-            
+
         elProjectLink.append(icon)
         elIconsContainer.appendChild(elProjectLink)
 
@@ -118,62 +97,62 @@ const createCardsProject = (gitHubProject) => {
 
 }
 
-function showErrorOnScreen(errorContainer, divError) {
-    errorContainer.insertAdjacentElement('afterbegin', divError);
+function showErrorOnScreen(alertContainer, divAlert) {
+    alertContainer.insertAdjacentElement('afterbegin', divAlert);
 }
 
 
-const waitErrorAndRemoveDiv = errorContainer => {
-    setTimeout(() => errorContainer.classList.add('removeAlertContainer'), 5500)
+const waitErrorAndRemoveDiv = alertContainer => {
+    setTimeout(() => alertContainer.classList.add('removeAlertContainer'), 5500)
 }
 
-const removeLoader = () =>  document.querySelector('.loader').style.display = 'none' 
+const removeLoader = () => document.querySelector('.loader').style.display = 'none'
 
-const removingErrorElement = (divError , errorContainer) => {
+const removingErrorElement = (divAlert, alertContainer, type) => {
     setTimeout(() => {
-        divError.setAttribute('class', 'alert alert-danger hideAlert')
+        divAlert.setAttribute('class', `alert alert-${type} hideAlert`)
         removeLoader()
     }, 4500)
 
-    waitErrorAndRemoveDiv(errorContainer)
+    waitErrorAndRemoveDiv(alertContainer)
 }
 
-const createElementError = message => {
-    const errorContainer = document.querySelector('[data-js="errorContainer"]')
+const createElNotitication = (type, message) => {
+    const alertContainer = document.querySelector('[data-js="errorContainer"]')
 
-    errorContainer.classList.remove('removeAlertContainer')
+    alertContainer.classList.remove('removeAlertContainer')
 
 
-    const divError = document.createElement('div')
-    divError.setAttribute('role', 'alert')
-    divError.setAttribute('class', 'alert alert-danger moveAlert')
-    divError.innerText = message;
+    const divAlert = document.createElement('div')
+    divAlert.setAttribute('role', 'alert')
+    divAlert.setAttribute('class', `alert alert-${type} moveAlert`)
+    divAlert.innerText = message;
 
-    removingErrorElement(divError, errorContainer)
-    showErrorOnScreen(errorContainer, divError)
+    removingErrorElement(divAlert, alertContainer, type)
+    showErrorOnScreen(alertContainer, divAlert)
 
 }
 
 const showLoader = () => document.querySelector('.loader').style.display = 'block'
 
-const show_Projects_If_Promise_Error= () =>{
+const show_Projects_If_Promise_Error = () => {
     showLoader()
 
-   const getLocalDatas = () => fetch('dados.json')
-    .then(async (res) => { 
-        const errorRequest = res.status === 404;
+    const getLocalDatas = () => fetch('dados.json')
+        .then(async (res) => {
+            const errorRequest = res.status === 404;
 
-        if (errorRequest) throw new Error('Impossivel obter dados')
-    
+            if (errorRequest) throw new Error('Impossivel obter dados')
+
             removeLoader()
             return await res.json()
 
         })
         .catch(error => {
-             createElementError(error.message)
+            createElNotitication("danger", error.message)
         })
 
-    const handlePromise = async() => {
+    const handlePromise = async () => {
         const localDatas = await getLocalDatas()
         localDatas.forEach(data => {
             createCardsProject(data)
@@ -185,28 +164,28 @@ const show_Projects_If_Promise_Error= () =>{
 
 const getDataGitHub = () => {
     showLoader()
-      const resultRequest = fetch('http://api.github.com/users/igorfonseca05/repos')
-        .then(async (res) => { 
+    const resultRequest = fetch('http://api.github.com/users/igorfonseca05/repos')
+        .then(async (res) => {
             const errorRequest = res.status === 404;
 
-            const msgError = 
-            'Falha na requisição dos dados da API, \n veja alguns projetos disponiveis Offline'
+            const msgError =
+                'Falha na requisição dos dados da API, \n veja alguns projetos disponiveis Offline'
 
             if (errorRequest) throw new Error(msgError)
-            
+
             removeLoader()
             return await res.json()
 
-            })
+        })
         .catch(error => {
             show_Projects_If_Promise_Error()
-            createElementError(error.message)
+            createElNotitication('danger', error.message)
         })
-        
-        return resultRequest
-    }
-    
-    const handleDatasGithub = async () => {
+
+    return resultRequest
+}
+
+const handleDatasGithub = async () => {
     const datas = await getDataGitHub()
     datas.forEach(data => {
         createCardsProject(data)
@@ -214,7 +193,41 @@ const getDataGitHub = () => {
 
 }
 
+const sendButtonAnimation = () => {
+    const button = document.querySelector('.sendButton')
+    console.log(button)
+
+}
+
+sendButtonAnimation()
+
+
+const SendEmail = () => {
+    window.onload = function () {
+        const form = document.getElementById('form')
+
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm('contact_service', 'contact_form', "form")
+                .then(function () {
+                    console.log('enviado')
+                    createElNotitication('success', 'Email enviado')
+                    event.target.reset()
+                }, function (error) {
+                    createElNotitication('danger', 'Falha ao enviar email, tente outras formas de contato')
+                });
+    
+           });
+    }
+ 
+}
+
+SendEmail()
 handleDatasGithub()
+
+
 
 const makeRequest = () => {
     const portifolioContainer = document.querySelector('[data-js="portfolioContainer"]')
