@@ -187,15 +187,34 @@ const getDataGitHub = () => {
 
 const handleDatasGithub = async () => {
     const datas = await getDataGitHub()
+
+    
     datas.forEach(data => {
+        console.log(data.name, data.id, data.description, data.language,
+        data.svn_url, data.homepage)
         createCardsProject(data)
     })
 
 }
 
+
+const makeRequest = () => {
+    if(window.innerWidth <= 420) {
+        show_Projects_If_Promise_Error()
+        return
+    }
+
+    handleDatasGithub()
+}
+
+window.addEventListener('load', makeRequest)
+
+
+//Setting API Email
+
 const sendButtonAnimation = () => {
     const button = document.querySelector('.sendButton')
-    console.log(button)
+    // console.log(button)
 
 }
 
@@ -218,28 +237,11 @@ const SendEmail = () => {
                 }, function (error) {
                     createElNotitication('danger', 'Falha ao enviar email, tente outras formas de contato')
                 });
-    
-           });
+
+        });
     }
- 
+
 }
 
 SendEmail()
-handleDatasGithub()
-
-
-
-const makeRequest = () => {
-    const portifolioContainer = document.querySelector('[data-js="portfolioContainer"]')
-    const minimamHeight = portifolioContainer.getClientRects()[0].top
-
-    if (minimamHeight <= 490) {
-        // console.log('o')
-        handleDatasGithub()
-        removeScrollEvent()
-    }
-}
-
-// window.addEventListener('scroll', makeRequest)
-
 
