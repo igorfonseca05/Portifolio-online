@@ -1,7 +1,15 @@
 
+const portifolioContainer = document.querySelector('[data-js="portfolioContainer"]')
 
 
-// Manipulação do Dom
+const createButtonMobileVersion = () => {
+    const button = document.createElement('a')
+    button.setAttribute('class', 'btn btn-primary my-2 PortButton')
+    button.setAttribute('target', 'blank')
+    button.setAttribute('href', 'https://github.com/igorfonseca05?tab=repositories')
+    button.innerText = 'Ver mais'
+    portifolioContainer.insertAdjacentElement('afterend', button)
+}
 
 const removeScrollEvent = () => {
     window.removeEventListener('scroll', makeRequest)
@@ -10,8 +18,6 @@ const removeScrollEvent = () => {
 const createCardsProject = (gitHubProject) => {
 
     // console.log(gitHubProject)
-
-    const portifolioContainer = document.querySelector('[data-js="portfolioContainer"]')
 
     // console.log(gitHubProject.name, gitHubProject.description, gitHubProject.language,
     //     gitHubProject.svn_url, gitHubProject.homepage)
@@ -157,6 +163,7 @@ const show_Projects_If_Promise_Error = () => {
         localDatas.forEach(data => {
             createCardsProject(data)
         })
+        createButtonMobileVersion()
     }
 
     handlePromise()
@@ -188,10 +195,10 @@ const getDataGitHub = () => {
 const handleDatasGithub = async () => {
     const datas = await getDataGitHub()
 
-    
+
     datas.forEach(data => {
         console.log(data.name, data.id, data.description, data.language,
-        data.svn_url, data.homepage)
+            data.svn_url, data.homepage)
         createCardsProject(data)
     })
 
@@ -199,33 +206,36 @@ const handleDatasGithub = async () => {
 
 
 const makeRequest = () => {
-    if(window.innerWidth <= 420) {
-        show_Projects_If_Promise_Error()
+    if (window.innerWidth <= 420) {
+        show_Projects_If_Promise_Error('mobile')
         return
     }
 
     handleDatasGithub()
 }
 
-window.addEventListener('load', makeRequest)
+const addEffectHover = () => {
+   const hoverEffect = (classValue) => {
+        document.querySelector(`${classValue}`).classList.add('hoverButtons');
+      }
 
-
-//Setting API Email
-
-const sendButtonAnimation = () => {
-    const button = document.querySelector('.sendButton')
-    // console.log(button)
-
+    const removeHoverEffect = (classValue) => {
+        document.querySelector(`${classValue}`).classList.remove('hoverButtons');
+      }
 }
-
-sendButtonAnimation()
 
 
 const SendEmail = () => {
     window.onload = function () {
         const form = document.getElementById('form')
 
+        const sendButtonAnimation = () => {
+            const button = document.querySelector('.sendButton')
+            // console.log(button)
 
+        }
+
+        // sendButtonAnimation()
         form.addEventListener('submit', function (event) {
             event.preventDefault();
 
@@ -243,5 +253,6 @@ const SendEmail = () => {
 
 }
 
+window.addEventListener('load', makeRequest)
+addEffectHover()
 SendEmail()
-

@@ -215,6 +215,15 @@ footer .social-icons a {
     background-color: var(--textColor) !important;
 }
 
+.PortButton{
+  display: block !important;
+  background-color: #e4e4e4;
+  max-width: 178px;
+  margin: 0 auto;
+  background-color: var(--detailsColor) !important;
+  border: none !important;
+}
+
 
 .FinalText{
   text-align: center !important;
@@ -243,6 +252,13 @@ h2:not(.FinalText) {
   border: none !important;
   color: var(--bg-color) !important;
   
+}
+
+.hoverButtons{
+  background-color: var(--detailsColorHover) !important;
+  border: none !important;
+  box-shadow: 0px 0px 10px var(--detailsColorHover) ;
+  color: var(--bg-color) !important;
 }
 
 .button:hover {
