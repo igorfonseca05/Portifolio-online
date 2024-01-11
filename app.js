@@ -207,22 +207,23 @@ const handleDatasGithub = async () => {
 
 const makeRequest = () => {
     if (window.innerWidth <= 420) {
-        show_Projects_If_Promise_Error('mobile')
+        // show_Projects_If_Promise_Error('mobile')
         return
     }
 
-    handleDatasGithub()
+    // handleDatasGithub()
 }
 
-const addEffectHover = () => {
-   const hoverEffect = (classValue) => {
-        document.querySelector(`${classValue}`).classList.add('hoverButtons');
-      }
 
-    const removeHoverEffect = (classValue) => {
-        document.querySelector(`${classValue}`).classList.remove('hoverButtons');
-      }
+const hoverEffect = (idValue) => {
+    document.getElementById(`${idValue}`).classList.add('hoverButtons');
+    // console.log(document.getElementById(`${idValue}`))
 }
+
+const removeHoverEffect = (idValue) => {
+    //  console.log(classValue)
+     document.getElementById(`${idValue}`).classList.remove('hoverButtons');
+   }
 
 
 const SendEmail = () => {
@@ -254,5 +255,4 @@ const SendEmail = () => {
 }
 
 window.addEventListener('load', makeRequest)
-addEffectHover()
 SendEmail()
