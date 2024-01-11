@@ -2,6 +2,41 @@
 const portifolioContainer = document.querySelector('[data-js="portfolioContainer"]')
 
 
+const typingEffect = () => {
+    const typing = document.querySelector('[data-js="typing"]')
+
+    const message = ["Web Developer"]
+
+    let messageIndex = 0;
+    let currentMessage = '';
+    let changingIndex = 0;
+    let Fullmensage = ''
+
+    const type = () => {
+
+        const lastItemMessageArray = messageIndex === message.length
+
+        if (lastItemMessageArray) {
+            messageIndex = 0
+        }
+
+        currentMessage = message[messageIndex];
+        Fullmensage = currentMessage.slice(0, changingIndex++)
+
+        typing.innerHTML = Fullmensage;
+
+        const finishTypeMessage = currentMessage.length === Fullmensage.length
+
+        if (finishTypeMessage) {
+            messageIndex++
+            changingIndex = 0;
+        }
+
+    }
+
+    timer = setInterval(type, 200)
+}
+
 const createButtonMobileVersion = () => {
     const button = document.createElement('a')
     button.setAttribute('class', 'btn btn-primary my-2 PortButton')
@@ -132,6 +167,7 @@ const createElNotitication = (type, message) => {
     const divAlert = document.createElement('div')
     divAlert.setAttribute('role', 'alert')
     divAlert.setAttribute('class', `alert alert-${type} moveAlert`)
+    divAlert.setAttribute('id', `notification-${type}`)
     divAlert.innerText = message;
 
     removingErrorElement(divAlert, alertContainer, type)
@@ -195,64 +231,93 @@ const getDataGitHub = () => {
 const handleDatasGithub = async () => {
     const datas = await getDataGitHub()
 
-
     datas.forEach(data => {
-        console.log(data.name, data.id, data.description, data.language,
-            data.svn_url, data.homepage)
+        // console.log(data.name, data.id, data.description, data.language,
+        //     data.svn_url, data.homepage)
         createCardsProject(data)
     })
-
 }
-
 
 const makeRequest = () => {
     if (window.innerWidth <= 420) {
-        // show_Projects_If_Promise_Error('mobile')
+        show_Projects_If_Promise_Error('mobile')
         return
     }
 
-    // handleDatasGithub()
+    handleDatasGithub()
 }
-
-
-const hoverEffect = (idValue) => {
-    document.getElementById(`${idValue}`).classList.add('hoverButtons');
-    // console.log(document.getElementById(`${idValue}`))
-}
-
-const removeHoverEffect = (idValue) => {
-    //  console.log(classValue)
-     document.getElementById(`${idValue}`).classList.remove('hoverButtons');
-   }
-
 
 const SendEmail = () => {
     window.onload = function () {
         const form = document.getElementById('form')
 
         const sendButtonAnimation = () => {
-            const button = document.querySelector('.sendButton')
-            // console.log(button)
+            const button = [...document.querySelector('.sendButton').children]
 
+            button.forEach(child => {
+                if (child.classList.contains('addOpacity')) {
+                    child.classList.toggle('removeOpacity')
+                    return
+                }
+                child.classList.toggle('removeOpacity')
+            })
         }
 
-        // sendButtonAnimation()
-        form.addEventListener('submit', function (event) {
+        const removingSubmitEvent = () => {
+            form.removeEventListener('submit', sendform)
+        }
+
+        function sendform(event) {
             event.preventDefault();
+
+            removingSubmitEvent()
+
+            sendButtonAnimation()
+            createElNotitication('success', 'Email enviado com sucesso')
 
             emailjs.sendForm('contact_service', 'contact_form', "form")
                 .then(function () {
                     console.log('enviado')
-                    createElNotitication('success', 'Email enviado')
+                    sendButtonAnimation()
                     event.target.reset()
+                    form.addEventListener('submit', sendform)
                 }, function (error) {
                     createElNotitication('danger', 'Falha ao enviar email, tente outras formas de contato')
                 });
-
-        });
+        }
+        form.addEventListener('submit', sendform)
     }
-
 }
 
+
+// const darkAndLightMode = () => {
+//     const iconMode = document.querySelector('.iconMoonAndSun')
+
+//     iconMode.addEventListener('click', (e) => {
+//         iconMode.children[0].classList.toggle('hide')
+//         iconMode.children[1].classList.toggle('hide')
+
+//         const h2 = document.querySelectorAll('h2')
+//         const skillsCards = document.querySelectorAll('skillsCards')
+//         const sections = document.querySelectorAll('[data-js="section"]')
+
+
+//         console.log(h2)
+
+//         document.querySelectorAll('.cardProject').forEach((item, index) => {
+//             console.log(index)
+
+//             if(h2.length <= index) {
+//                 console.log(h2[index])
+//             }
+
+
+//             item.classList.toggle('elementsTitle')
+//         })
+//     })
+// }
+
+typingEffect()
 window.addEventListener('load', makeRequest)
 SendEmail()
+// darkAndLightMode()

@@ -12,14 +12,39 @@
   --detailsColorHover: #ff7802; 
   --textColor: #e6e6e6;
   /* --buttonColor: rebeccapurple; */
+
+  --bgModeColor1: #f5f5f5;
+  --bgModeColor2: #eaebef;
+  --textColorDarkMode: #ffffffec;
+  --cardModeColor:#0073f4;
   
 }
+
 
 /* Changing background color */
 body {
   background: var(--bg-color2) !important;
 }
 
+#sectionSkills{
+  background-color: var(--bg-color1);
+}
+#sectionPortifolio{
+  background-color: var(--bg-color2);
+}
+#sectionAbout{
+  background-color: var(--bg-color1);
+}
+#sectionCurriculum{
+  background-color: var(--bg-color2);
+}
+#sectionContact {
+  background-color: var(--bg-color1);
+}
+
+.sun:hover {
+  color: var(--detailsColor) !important;
+}
 
 /* Changing link color */
 .nav-item .nav-link {
@@ -43,6 +68,30 @@ body {
   background-attachment: fixed;
 }
 
+[data-js="typing"]{
+  position: relative;
+  height: 78.8px;
+}
+
+[data-js="typing"]::after{
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: #0073f4;
+  animation: typing 1s ease infinite;
+  
+}
+
+@keyframes typing {
+  from{
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+  
+}
 
 #skills i {
   height: 100px;
@@ -138,7 +187,7 @@ footer .social-icons a {
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom;
-  background-image: url("../images/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg");
+  /* background-image: url("../images/contact-bg.jpeg"); */
 }
 
 .arrow {
@@ -147,9 +196,10 @@ footer .social-icons a {
 
 .skillsCards{
   width: 362px !important;
-  background-color:var(--details) !important;
+  background-color:var(--bg-color2) !important;
   
 }
+
 
 .material-symbols-outlined{
   font-size: 30px !important;
@@ -185,7 +235,7 @@ footer .social-icons a {
 }
 
 .cardProject{
-  background-color:var(--details) !important;
+  background-color:var(--details) ;
   /* border: none !important; */
 }
 
@@ -325,13 +375,89 @@ h2:not(.FinalText) {
 }
 
 .hide{
-  display: none;
+  display: none !important;
 }
 
+.show{
+  display: block;
+}
 
 .sendButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-width: 178px !important;
+  height: 48px;
+  /* overflow: hidden; */
+  position: relative;
 }
+
+.sendButton p {
+  transition: opacity 0.4s ease-in-out;
+}
+
+.sendButton div {
+  transition: opacity 0.4s ease-in-out;
+  position: absolute;
+  top: 17px;
+  /* opacity: 0; */
+  left: 79px;
+}
+
+.addOpacity{
+  transition: opacity 0.4s ease-in-out;
+  opacity: 1;
+}
+
+.removeOpacity {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+
+#notification-success {
+  background-color: rgb(124, 255, 124) !important;
+  border: 2px solid green !important;
+  color: rgb(0, 0, 0) !important;
+}
+
+#notification-danger {
+  background-color: rgb(250, 102, 102) !important;
+  border: 2px solid  red !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+
+
+/* Mode Settings */
+
+.bgMode {
+  background-color: var(--white-color) !important;
+
+}
+
+.skillsCardsMode, .skillsCardsMode > p, .skillsCardsMode > span{
+  background-color: var(--cardModeColor) !important;
+  color: var(--textColorDarkMode) !important;
+}
+
+.h2ModeColor {
+  color: var(--textColorDarkMode) !important;
+}
+
+.skillsCardsMode > h3, .skillsCardsMode > span{
+  color: var(--textColorDarkMode) !important;
+}
+
+.elementsTitle, .elementsTitle > p {
+  color: var(--textColorDarkMode) !important;
+  background-color: var(--cardModeColor) !important;
+}
+
+.elementsTitle a > i{
+  color: var(--textColorDarkMode) !important;
+}
+
+
 
 
 
