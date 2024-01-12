@@ -31,7 +31,6 @@ const typingEffect = () => {
             messageIndex++
             changingIndex = 0;
         }
-
     }
 
     timer = setInterval(type, 200)
