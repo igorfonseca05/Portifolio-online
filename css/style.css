@@ -277,6 +277,7 @@ footer .social-icons a {
 
 .FinalText{
   text-align: center !important;
+  height: 100px !important;
 }
 
 h2:not(.FinalText) {
@@ -304,12 +305,6 @@ h2:not(.FinalText) {
   
 }
 
-.hoverButtons{
-  background-color: var(--detailsColorHover) !important;
-  border: none !important;
-  box-shadow: 0px 0px 10px var(--detailsColorHover) ;
-  color: var(--bg-color) !important;
-}
 
 .button:hover {
   background-color: var(--detailsColorHover) !important;
@@ -317,6 +312,10 @@ h2:not(.FinalText) {
   box-shadow: 0px 0px 10px var(--detailsColorHover) ;
   color: var(--bg-color) !important;
   
+}
+
+.lastGoal{
+  height: 100px !important;
 }
 
 #cv .row {

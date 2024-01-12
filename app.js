@@ -206,7 +206,7 @@ const show_Projects_If_Promise_Error = () => {
 
 const getDataGitHub = () => {
     showLoader()
-    const resultRequest = fetch('http://api.github.com/users/igorfonseca05/repos')
+    const resultRequest = fetch('https://api.github.com/users/igorfonseca05/repos')
         .then(async (res) => {
             const errorRequest = res.status === 404;
 
