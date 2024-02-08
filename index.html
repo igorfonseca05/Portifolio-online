@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="images/programa.png" type="image/x-icon">
-  <title>Meu Portfólio</title>
+  <title>Portfólio</title>
 
   <link rel="stylesheet" href="css/style.css" />
 
@@ -20,33 +20,31 @@
   <!-- Header & Navbar -->
   <header class="bg-dark fixed-top">
     <nav id="header" class="container-xxl navbar navbar-expand-lg py-3 bg-dark navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold fs-3" href="#home"><span> <span class="arrow">< </span> i <span class="arrow">></span></span></a>
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3 px-3" href="#home"> Igor.F</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#skills">SKILLS</a>
+              <a class="nav-link" href="#home">Home</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#portfolio">PORTFOLIO</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#about">ABOUT</a>
+              <a class="nav-link" href="#Services">Services</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#cv">CURRICULUM</a>
+              <a class="nav-link" href="#portfolio">Portifolio</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="#contact">CONTACT</a>
+              <a class="nav-link" href="#cv">Curriculo</a>
             </li>
-            <!-- <li class="iconMoonAndSun nav-item mx-2">
-              <span style="cursor: pointer; user-select: none;" class="sun material-symbols-outlined">light_mode</span>
-              <span style="cursor: pointer; user-select: none;" class="moon material-symbols-outlined hide">dark_mode</span>
-            </li> -->
+          </ul>
+          <a href="#contact" class="btn btn-primary">CONTACT</a>
         </div>
       </div>
       <div data-js="container" class="container containerError">
@@ -59,43 +57,92 @@
 
   <!-- Hero or Showcase Section -->
   <section id="home" class="hero d-flex flex-column align-items-center justify-content-center">
-    <div class="text-center">
-      <h1 class="h1 text-white fw-medium fst-italic">Igor Fonseca</h1>
-      <h2 data-js="typing" class="display-3 text-white fw-bold">Web developer</h2>
-      <a href="#skills" class=" button btn btn-lg fs-6 fw-medium mt-5 btn-primary p-3">TELL ME MORE</a>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 text-home-container">
+          <div class="text-home">
+            <h1 class="h1 display-2 text-white fw-bold">Igor Fonseca</h1>
+            <h2 data-js="typing" class=" text-primary display-5">Web developer</h2>
+            <p style="line-height: 25px; opacity: 0.7;" class="pt-2 subText">"Desenvolvedor full-stack comprometido
+              com a excelência técnica. Da arquitetura do back-end ao design do front-end, busco soluções
+              eficientes para desafios complexos."</p>
+            <a href="#Services" id="textButton" class=" button btn fs-6 fw-medium mt-3 pt-2">Saiba mais</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <figure class="myPhoto-container">
+            <img class="img-fluid myPhoto" src="images/Group 4.png" alt="">
+          </figure>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <div data-js="section" id="sectionSkills">
-    <section class="container py-5" id="skills">
+  <!-- About Section -->
+  <div data-js="section" id="sectionAbout">
+    <section class="container py-5" id="about">
+      <div class="row about-infos">
+        <div class="col-md-6 img-about-container">
+          <img style="border: 2px solid #097fd9; border-radius: 10px;" width="500px" height="350px" class="img-fluid"
+            src="images/3f6da70f-c23c-481f-b6a5-56f20b624e4a.png" alt="">
+        </div>
+        <div class="col-md-6">
+          <h1 style="font-weight: 800;" class="titleSection titleDesktop">Sobre</h1>
+          <p class="mt-4 subText">Me chamo Igor sou estudante de ciência de dados e desenvolvedor web. Nos ultimos dois
+            anos, como desenvolvedor
+            frontend, tenho me dedicado no aperfeiçoamento de minhas habilidades, criando projetos
+            interativos e responsivos que me auxiliam a aprender mais sobre JavaScript, HTML, CSS,
+            Bootstrap, Materialize e React. Além disso, visando atender o interesse dos meus clientes em
+            projetos que abrajam tanto o front quanto backend, me dediquei também em dominar o NodeJS e
+            os bancos de dados MySQL e mongoDB.</p>
+          <a class="btn btn-primary btn-lg mb-2" href="Curriculo-Igor.pdf" download="Igor-Fonseca-Curriculo.pdf">Download
+            CV
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+          </a>
+
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <!-- Services Section -->
+  <div data-js="section" id="sectionServices">
+    <section class="container py-5" id="Services">
       <div class="row mt-4 py-3">
         <div class="col-12 d-flex flex-column text-center justify-content-center">
-          <h2>SKILLS</h2>
-          <h5 class="text-secondary fw-normal py-2 fst-italic">Desenvolvendo competências para impulsionar o sucesso e
-            transformar desafios em oportunidades.</h5>
+          <h2 class="pt-3 fw-bold">Serviços</h2>
+          <h5 class="text-secondary fw-normal py-3 fst-italic" style="width: 70%; margin: 0 auto;">Transformamos ideias
+            em experiências digitais de ponta a ponta, unindo interfaces envolventes no front-end com a robustez do
+            back-end para elevar sua presença online</h5>
         </div>
       </div>
       <div class="row d-flex justify-content-between mx-0">
-        <div class="skillsCards moveCards card mt-5 d-flex flex-column align-items-center text-center p-4" style="width: 25rem">
+        <div class="skillsCards moveCards card mt-5 d-flex flex-column align-items-center text-center p-4"
+          style="width: 25rem">
           <span class=" material-symbols-outlined">phone_iphone</span>
-          <h3 class="skillColor mt-4 h4">Front-end Development</h3>
-          <p class="skillColor text-center">"Domínio em HTML, CSS e JavaScript. Experiência em design responsivo e construção de
+          <h3 class="skillColorTitle mt-4 h4">Front-end Development</h3>
+          <p class="skillColor text-center mt-3">"Domínio em HTML, CSS e JavaScript. Experiência em design responsivo e
+            construção de
             interfaces intuitivas para proporcionar uma experiência excepcional aos usuários.</p>
         </div>
-        <div class="skillsCards moveCards card mt-5 d-flex flex-column align-items-center text-center p-4" style="width: 25rem">
+        <div class="skillsCards moveCards card mt-5 d-flex flex-column align-items-center text-center p-4"
+          style="width: 25rem">
           <span class="material-symbols-outlined">code</span>
-          <h3 class="skillColor mt-4 h4">Back-end Development</h3>
-          <p class="skillColor text-center">Competente em programação server-side, aplicando tecnologias como Node.js e Express. Com
-            dedicação de anos no estudo dessas ferramentas, focado especialmente na administração de bancos de dados, como
+          <h3 class="skillColorTitle mt-4 h4">Back-end Development</h3>
+          <p class="skillColor text-center mt-3">Competente em programação server-side, aplicando tecnologias como
+            Node.js,
+            Express e na administração de bancos de dados, como MongoDB e MySQL.
             MongoDB e MySQL.</p>
         </div>
-        <div class="skillsCards moveCards card mt-5 d-flex flex-column align-items-center text-center p-4" style="width: 25rem">
+        <div class="skillsCards moveCards card mt-5 d-flex flex-column align-items-center text-center p-4"
+          style="width: 25rem">
           <span class=" material-symbols-outlined">settings</span>
-          <h3 class="skillColor mt-4 h4">Manutenção de <br> Websites</h3>
-          <p class="skillColor text-center">A manutenção de websites é essencial para garantir seu desempenho contínuo, incluindo
-            correções de bugs, atualizações de conteúdo e verificações de segurança. Profissionais especializados
-            desempenham um papel vital nesse processo, assegurando uma experiência online consistente e confiáve</p>
+          <h3 class="skillColorTitle mt-4 h4">Manutenção de Websites</h3>
+          <p class="skillColor text-center mt-3">A manutenção de websites é essencial para garantir seu desempenho
+            contínuo,
+            incluindo
+            correções de bugs, atualizações de conteúdo e verificações de segurança.</p>
         </div>
       </div>
     </section>
@@ -106,97 +153,17 @@
     <section class="container py-5" id="portfolio">
       <div class="row mt-4 py-3">
         <div class="col-12 d-flex flex-column text-center justify-content-center"></div>
-          </div>
-          <!-- Inicio seção -->
-          <h2 class="text-center">PORTFOLIO</h2>
-          <h5 class="text-center text-secondary fw-normal py-2 fst-italic">Uma coleção de projetos nos quais estive envolvido.</h5>
-          <div data-js="portfolioContainer" class="row mt-3 mx-0 justify-content-center align-items-center">
-            <div class="projectsContainer col-lg-3 col-md-4  card-wrapper">
-              <span class="loader"></span>
-            </div>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <!-- About Section -->
-  <div data-js="section" id="sectionAbout">
-    <section class="container py-5" id="about">
-      <div class="row mt-4 py-3">
-        <div class="col-12 d-flex flex-column text-center">
-          <h2>ABOUT</h2>
-          <h5 class="text-secondary fw-normal py-2 fst-italic">Explore mais sobre mim, minha trajetória e o que me
-            impulsiona</h5>
-        </div>
       </div>
-      <div class="row flex-row-reverse flex-md-row mt-5 pt-5">
-        <div class="AboutMe col-9 col-md-5 text-md-end">
-          <h5>2016-2019</h5>
-          <h5>Ensino superior e a programação</h5>
-          <p class="resume">Enquanto estudante de física no Instituto Federal do Rio de Janeiro, participei ativamente do desenvolvimento de um programa em Java que tinha como propósito modelar as trajetórias de partículas cósmicas. Essa experiência proporcionou-me valiosas contribuições no campo da programação e na compreensão da dinâmica das partículas cósmicas.
-          </p>
-        </div>
-        <div class="col-3 col-md-2 img text-center">
-          <img class="rounded-circle border border-5 border-dark-subtle img-fluid"
-            src="images/2.jpeg" alt="img">
-        </div>
-      </div>
-      <div class="row justify-content-md-end mt-5 pt-5">
-        <div class="col-3 col-md-2 img text-center">
-          <img class="rounded-circle border border-5 border-dark-subtle img-fluid" src="images/about-img-2.jpg" alt="img">
-        </div>
-        <div class="AboutMe col-9 col-md-5">
-          <h5>2020-2022</h5>
-          <h5>Mestrado e um contato maior com a computação</h5>
-          <p class="resume">Mantendo meu interesse pelos computadores, adentrei o mestrado, focando minha especialização em computação quântica e informação. Nesse período, estabeleci contato intenso com profissionais que possuíam vasta familiaridade com linguagens de programação e suas aplicações. Foi nesse ambiente estimulante que encontrei motivação para aprofundar meu conhecimento na área, participando ativamente de seminários e palestras.
-          </p>
-        </div>
-      </div>
-      <div class="row flex-row-reverse flex-md-row mt-5 pt-5">
-        <div class="AboutMe col-9 col-md-5 text-md-end">
-          <h5>2022-Presente</h5>
-          <h5>Graduação em Ciencia de dados</h5>
-          <p class="resume">Durante uma dessas palestras, fui apresentado à ciência de dados e suas diversas aplicações. Foi nesse momento que, após concluir o mestrado, optei por aprofundar meus estudos nesse campo e ingressar em um curso superior dedicado à área.
-          </p>
-        </div>
-        <div class="col-3 col-md-2 img text-center">
-          <img class="rounded-circle border border-5 border-dark-subtle img-fluid" src="images/charts.jpg" alt="img">
-        </div>
-      </div>
-      <div class="row justify-content-md-end mt-5 pt-5">
-        <div class="col-3 col-md-2 img text-center">
-          <img class="rounded-circle border border-5 border-dark-subtle img-fluid" src="images/react.jpg" alt="img">
-        </div>
-        <div class="AboutMe col-9 col-md-5">
-          <h5>2022-Present</h5>
-          <h5>JavaScript e desenvolvimento web</h5>
-          <p class="resume">
-            Ao longo da minha formação acadêmica, fui apresentado ao JavaScript e ao desenvolvimento web, o que me impulsionou a concentrar meus últimos anos de estudo na linguagem, bem como na execução de projetos práticos na área.
-          </p>
-        </div>
-      </div>
-      <div class="row flex-row-reverse flex-md-row mt-5 pt-5">
-        <div class="AboutMe col-9 col-md-5 text-md-end">
-          <h5>2024-Futuro</h5>
-          <h5>Objetivo</h5>
-          <p>
-          </p class="resume">Busco evoluir profissionalmente como desenvolvedor Full Stack, desempenhando um papel integral que abrange desde o front-end até o back-end, além de manter um aprendizado continuo, afim de integrar os conhecimentos adquiridos em Ciência de Dados no desenvolvimento de aplicações robustas. Meu foco é oferecer soluções eficientes para os desafios tecnológicos contemporâneos.
-        </div>
-        <div class="col-3 col-md-2 img text-center">
-          <img class="rounded-circle border border-5 border-dark-subtle img-fluid"
-            src="images/pexels-thirdman-7652180.jpg" alt="img">
-          </div>
-        </div>
-        <div class=" row justify-content-md-center mt-5 pt-5">
-          <div class="FinalText col-3 col-md-2 d-flex justify-content-center hire-text">
-            <h2
-            class=" h4 d-flex justify-content-center align-items-center bg-primary text-white rounded-circle border border-5 border-dark-subtle">
-            <img style="width: 100%;" class=" rounded-circle border border-0 border-dark-subtle img-fluid"
-              src="images/work.png" alt="img">
-           
+      <!-- Inicio seção -->
+      <h2 style="font-size: 25px;" class="text-center">Portifólio</h2>
+      <h2 class="subTitle">Projetos nos quais estive envolvido.</h2>
+      <div data-js="portfolioContainer" class="row mt-5 mx-0 justify-content-center align-items-center">
+        <div class="projectsContainer col-lg-3 col-md-4  card-wrapper">
+          <span class="loader"></span>
         </div>
       </div>
     </section>
+  </div>
   </div>
 
   <!-- Curriculum Vitae Section -->
@@ -336,24 +303,24 @@
               <div class="row d-flex justify-content-center">
                 <div class="col-lg-6">
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Enter Name*" name="user_name"
-                      >
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Enter Name*"
+                      name="user_name">
                     <label for="floatingInput">Enter Name*</label>
                   </div>
                   <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="floatingEmail" placeholder="Enter Email*"
-                      name="user_email" >
+                      name="user_email">
                     <label for="floatingEmail">Enter Email*</label>
                   </div>
                   <div class="form-floating mb-3">
                     <input type="number" class="form-control" id="floatingPassword" placeholder="Enter Phone*"
-                      name="contact_number" >
+                      name="contact_number">
                     <label for="floatingPassword">Enter Phone*</label>
                   </div>
                 </div>
                 <div class="form-floating col-lg-6">
                   <textarea class="form-control" placeholder="Leave a comment here" id="floatingMessage"
-                    style="height: 205px" name="message" ></textarea>
+                    style="height: 205px" name="message"></textarea>
                   <label for="floatingMessage" class="px-4">Enter Message*</label>
                 </div>
                 <div class="col-12 mt-5 d-flex justify-content-center">
@@ -402,7 +369,9 @@
       emailjs.init('O4rM0kzZJlUEunC6e');
     })();
   </script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.8/purify.js"
+    integrity="sha512-93u7u+f+oUbInjU1GhC3JaJgykNSkL7Wiu4RE9lrVQIRfVi+1xBXtRTUfymoehDtD7DDhmkgZgbkfYlmCq8ydQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script type="text/javascript" src="app.js"></script>
 </body>
 

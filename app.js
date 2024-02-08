@@ -74,6 +74,13 @@ const createCardsProject = (gitHubProject) => {
     elCardText.setAttribute('class', 'language card-text text-secondary')
     elCardText.innerText = gitHubProject.language
 
+    // const languageCircle = document.createElement('div');
+    // languageCircle.className = 'language-circle';
+    // if (gitHubProject.language === 'JavaScript') languageCircle.style.backgroundColor = '#f0c72f'
+    // if (gitHubProject.language === 'HTML') languageCircle.style.backgroundColor = '#e96228'
+    // if (gitHubProject.language === 'CSS') languageCircle.style.backgroundColor = '#2ab1e2'
+    // elCardText.insertAdjacentElement("afterbegin",languageCircle);
+
     const elIconsContainer = document.createElement('div')
     elIconsContainer.setAttribute('class', 'icons')
 
@@ -231,8 +238,6 @@ const handleDatasGithub = async () => {
     const datas = await getDataGitHub()
 
     datas.forEach(data => {
-        // console.log(data.name, data.id, data.description, data.language,
-        //     data.svn_url, data.homepage)
         createCardsProject(data)
     })
 }
@@ -289,34 +294,7 @@ const SendEmail = () => {
 }
 
 
-// const darkAndLightMode = () => {
-//     const iconMode = document.querySelector('.iconMoonAndSun')
-
-//     iconMode.addEventListener('click', (e) => {
-//         iconMode.children[0].classList.toggle('hide')
-//         iconMode.children[1].classList.toggle('hide')
-
-//         const h2 = document.querySelectorAll('h2')
-//         const skillsCards = document.querySelectorAll('skillsCards')
-//         const sections = document.querySelectorAll('[data-js="section"]')
-
-
-//         console.log(h2)
-
-//         document.querySelectorAll('.cardProject').forEach((item, index) => {
-//             console.log(index)
-
-//             if(h2.length <= index) {
-//                 console.log(h2[index])
-//             }
-
-
-//             item.classList.toggle('elementsTitle')
-//         })
-//     })
-// }
-
 typingEffect()
 window.addEventListener('load', makeRequest)
 SendEmail()
-// darkAndLightMode()
+

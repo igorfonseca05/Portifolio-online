@@ -1,52 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap');
 
 
 /* Color variables */
 :root {
   --white-color: #eeeeee;
-  --bg-color1: #2b2a2f;
-  --bg-color2: #27262b;
-  --details: #2b2a2f;
+  --bg-color1: #1e1e1e;
+  --bg-color2: #212121;
+  --details2: #1e1e1e;
+  --details: #212121;
   --gray-color: #e4e4e4;
-  --detailsColor: #ff8c28; 
-  --detailsColorHover: #ff7802; 
-  --textColor: #e6e6e6;
+  --detailsColor: #2889d3; 
+  --detailsColorHover: #1f6296; 
+  --textColor: #b1b1b1;
   /* --buttonColor: rebeccapurple; */
 
   --bgModeColor1: #f5f5f5;
   --bgModeColor2: #eaebef;
   --textColorDarkMode: #ffffffec;
   --cardModeColor:#0073f4;
+
+  --font: 'Urbanist', sans-serif;
   
 }
 
-
-/* Changing background color */
-body {
-  background: var(--bg-color2) !important;
+section {
+  min-height: 100vh;
 }
 
-#sectionSkills{
+/* Changing background color */
+body, html {
+  background: var(--bg-color1) !important;
+  font-family: var(--font) !important;
+}
+
+#sectionServices{
   background-color: var(--bg-color1);
 }
 #sectionPortifolio{
   background-color: var(--bg-color2);
 }
+
 #sectionAbout{
-  background-color: var(--bg-color1);
-}
-#sectionCurriculum{
   background-color: var(--bg-color2);
 }
-#sectionContact {
+#sectionCurriculum{
   background-color: var(--bg-color1);
+}
+#sectionContact {
+  background-color: var(--bg-color2);
 }
 
 .sun:hover {
   color: var(--detailsColor) !important;
 }
 
-/* Changing link color */
+.navbar-nav {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between !important;
+}
+
 .nav-item .nav-link {
   color: var(--white-color);
   font-weight: 500;
@@ -61,16 +76,49 @@ body {
 /* Hero section background image */
 .hero {
   height: 100vh;
-  background-image: url("../images/oficial\ Bg.jpg");
+  background-color: #1e1e1e;
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
   background-attachment: fixed;
 }
 
+.myPhoto-container{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.myPhoto {
+  width: 80%;
+  margin-top: 100px;
+}
+
+.text-home-container{
+  display: flex;
+  align-items: center;
+}
+
+.text-home{
+  padding-left: 20%;
+}
+
+
+.subText{
+  color: rgb(196, 196, 196);
+  line-height: 30px !important;
+}
+
+.subTitle{
+  font-size: 42px;
+  color: white !important;
+  font-weight: 700;
+  text-align: center;
+}
+
 [data-js="typing"]{
   position: relative;
-  height: 78.8px;
+  height: 58.8px;
 }
 
 [data-js="typing"]::after{
@@ -93,9 +141,15 @@ body {
   
 }
 
+
 #skills i {
   height: 100px;
   width: 100px;
+
+}
+
+[data-js="portfolioContainer"] {
+  margin-top: 25px;
 }
 
 #portfolio img {
@@ -109,7 +163,7 @@ body {
 }
 
 i{
-  color: var(--detailsColor) !important;
+  color: var(--white-color) !important;
 
 }
 
@@ -161,7 +215,7 @@ i{
 
 #about img,
 #about .hire-text h2 {
-  width: 140px;
+  width: 350px;
 }
 
 #about .hire-text h2 {
@@ -196,14 +250,17 @@ footer .social-icons a {
 
 .skillsCards{
   width: 362px !important;
-  background-color:var(--bg-color2) !important;
-  
+  background-color:var(--details) !important;
 }
-
 
 .material-symbols-outlined{
   font-size: 30px !important;
-  color: var(--textColor) !important;
+  color: var(--cardModeColor) !important;
+}
+
+.skillColorTitle{
+  color: white !important;
+  font-weight: 600;
 }
 
 .skillColor{
@@ -211,14 +268,16 @@ footer .social-icons a {
 }
 
 .skillsCards:hover{
-  transition: 0.2s ease-in-out;
-  transform: scale(1.02);
-  box-shadow: 0px 0px 3px var(--detailsColor);
-
+  transition: 0.3s ease-in-out;
+  background-color: #0073f4 !important;
+ 
 }
 
 .skillsCards:hover > .material-symbols-outlined{
-  color: var(--detailsColor) !important;
+  color: white !important;
+}
+.skillsCards:hover > .skillColor{
+  color: white !important;
 }
 
 .projectsContainer {
@@ -230,39 +289,59 @@ footer .social-icons a {
 .projectsContainer .material-symbols-outlined  {
   color: var(--bg-color1) !important;
 }
+
 .projectsContainer:hover  .material-symbols-outlined  {
   color: var(--detailsColorHover) !important;
 }
 
 .cardProject{
-  background-color:var(--details) ;
+  background-color:var(--details2) ;
   /* border: none !important; */
+  border-radius: 5px;
+}
+
+.language-tag {
+  display: flex;
+  margin-top: 10px;
+}
+
+.language-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.507);
+}
+
+.card-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card{
   border: none !important;
 }
 
-.cardProject:hover{
-  transition: 0.2s ease-in-out;
-  box-shadow: 0px 0px 3px var(--detailsColor);
-}
+
 
 .cardProject .card-title{
- color:var(--textColor) !important;
+ color:var(--white-color) !important;
   border: none !important;
 }
 
 
 .icons a {
-  margin: 0px 4px;
+  margin: 0px 30px;
 }
 
 .collapseButton {
     width: 220px;
     height: 40px;
     margin: 14px 0px 3px 0px;
-    background-color: var(--textColor) !important;
+    /* background-color: transparent !important; */
+ 
+
 }
 
 .PortButton{
@@ -274,6 +353,48 @@ footer .social-icons a {
   border: none !important;
 }
 
+
+.img-about-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ 
+}
+
+.img-about-container img {
+  width: 70%;
+}
+
+.about-infos {
+  padding-top: 110px;
+}
+
+.section-About p {
+  color: rgba(255, 253, 253, 0.644);
+  line-height: 30px;
+}
+
+.list-Skills li {
+  list-style: none;
+  color: rgba(255, 253, 253, 0.644);
+}
+
+.list-Skills li:hover {
+  list-style: none;
+  color: rgb(255, 255, 255);
+}
+
+.list-Skills li::before {
+  content: '\2022';
+  color: var(--colotTitle);
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.titleDesktop{
+  color: var(--cardModeColor);
+}
 
 .FinalText{
   text-align: center !important;
@@ -289,7 +410,6 @@ h2:not(.FinalText) {
   color: var(--detailsColor) !important;
 }
 
-
 .AboutMe h5:nth-child(1){
   color: var(--textColor) !important;
 }
@@ -298,13 +418,16 @@ h2:not(.FinalText) {
   color: var(--textColor) !important;
 }
 
+#textButton {
+  color: white !important;
+}
+
 .button {
   background-color: var(--detailsColor) !important;
   border: none !important;
   color: var(--bg-color) !important;
   
 }
-
 
 .button:hover {
   background-color: var(--detailsColorHover) !important;

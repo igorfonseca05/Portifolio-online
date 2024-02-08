@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      max-width: 400px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .card-content p {
+      color: #666;
+      display: none; /* Oculta a descrição por padrão */
+    }
+
+    .card-content a {
+      display: block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #3498db;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <!-- Pode adicionar uma imagem se desejar -->
+  <!--<img src="sua-imagem.jpg" alt="Imagem do Card">-->
+
+  <div class="card-content">
+    <h3>Titulo do Card</h3>
+    <p>Descrição do seu card aqui. Pode incluir informações sobre seus links.</p>
+    <a onclick="toggleDescription()">Mostrar Descrição</a>
+  </div>
+</div>
+
+<script>
+  function toggleDescription() {
+    var description = document.querySelector('.card-content p');
+    var link = document.querySelector('.card-content a');
+
+    if (description.style.display === 'none') {
+      description.style.display = 'block';
+      link.textContent = 'Ocultar Descrição';
+    } else {
+      description.style.display = 'none';
+      link.textContent = 'Mostrar Descrição';
+    }
+  }
+</script>
+
+</body>
+</html>
