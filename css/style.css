@@ -84,7 +84,7 @@ body, html {
 }
 
 .myPhoto-container{
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   align-items: center;
 }
@@ -100,7 +100,7 @@ body, html {
 }
 
 .text-home{
-  padding-left: 20%;
+  padding-left: 18%;
 }
 
 
@@ -392,9 +392,10 @@ footer .social-icons a {
   margin-left: -1em;
 }
 
-.titleDesktop{
+.titleDesktop, .titleMobile{
   color: var(--cardModeColor);
 }
+
 
 .FinalText{
   text-align: center !important;
@@ -594,4 +595,25 @@ h2:not(.FinalText) {
   #portfolio .card-wrapper {
     width: 100% !important;
   }
+
+  .myPhoto-container{
+    /* min-height: 100vh; */
+    display: none;
+    align-items: center;
+  }
+
+  
+.text-home{
+  padding-left: 2%;
+}
+
+.titleDesktop{
+  display: none;
+}
+
+.downloadButton{
+  margin: 0 auto !important;
+}
+
+
 }
