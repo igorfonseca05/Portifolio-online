@@ -116,6 +116,10 @@ body, html {
   text-align: center;
 }
 
+.titleMobile{
+  display: none;
+}
+
 [data-js="typing"]{
   position: relative;
   height: 58.8px;
